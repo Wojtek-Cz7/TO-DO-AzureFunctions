@@ -17,4 +17,10 @@ namespace TO_DO_AzureFunctions
     {
         public string TaskDescription { get; set; }
     }
+
+    public class TodoUpdateModel
+    {
+        public string TaskDescription { get; set; }
+        public bool IsCompleted { get; set; }
+    }
 }

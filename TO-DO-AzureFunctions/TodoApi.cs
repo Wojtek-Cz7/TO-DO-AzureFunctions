@@ -38,7 +38,7 @@ namespace TO_DO_AzureFunctions
             return new OkObjectResult(items);
         }
 
-        [FunctionName("GetTodos")]
+        [FunctionName("GetTodoById")]
         public static IActionResult GetTodoById([HttpTrigger(AuthorizationLevel.Anonymous, "get", Route = "todo/{id}")] HttpRequest req, ILogger log, string id)
         {
             log.LogInformation($"Getting todo with id: {id}");
@@ -75,7 +75,7 @@ namespace TO_DO_AzureFunctions
         }
 
         [FunctionName("DeleteTodo")]
-        public static async Task<IActionResult> DeleteTodo([HttpTrigger(AuthorizationLevel.Anonymous, "delete", Route = "todo/{id}")] HttpRequest req, ILogger log, string id)
+        public static IActionResult DeleteTodo([HttpTrigger(AuthorizationLevel.Anonymous, "delete", Route = "todo/{id}")] HttpRequest req, ILogger log, string id)
         {
             log.LogInformation($"Getting todo with id: {id}");
 
